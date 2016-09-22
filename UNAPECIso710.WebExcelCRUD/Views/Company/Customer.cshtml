@@ -1,0 +1,43 @@
+﻿@model IEnumerable<UNAPECIso710.WebExcelCRUD.Models.Customer>
+
+@{
+    ViewBag.Title = "Vendedores";
+}
+
+<h2>@ViewBag.Title</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            Nombre
+        </th>
+        <th>
+            Dirección
+        </th>
+        <th></th>
+    </tr>
+
+@{
+    if (Model != null)
+    {
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    <ul class="list-inline">
+                        <li><a href="#"><i class="glyphicon glyphicon-erase"></i></a></li>
+                    </ul>
+                </td>
+            </tr>
+        }
+    }
+}
+
+</table>

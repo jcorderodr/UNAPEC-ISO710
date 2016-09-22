@@ -1,0 +1,39 @@
+﻿@model UNAPECIso710.WebExcelCRUD.Models.CompanyDetail
+
+@{
+    ViewBag.Title = "Sumario";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div>
+    <h4>Detalles de la Empresa</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Vendedores / Tiendas
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customers)
+        </dd>
+
+        <dt>
+            Productos
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Products)
+        </dd>
+
+        <dt>
+            Categorías
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Categories)
+        </dd>
+
+    </dl>
+</div>
+
