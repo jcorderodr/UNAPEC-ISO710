@@ -71,7 +71,7 @@ namespace UNAPECIso710.WebExcelCRUD.Controllers
 
             ViewData["Users"] = new SelectList(entites, "Id", "Name");
 
-            return View(entites);
+            return View();
         }
 
         [HttpPost]

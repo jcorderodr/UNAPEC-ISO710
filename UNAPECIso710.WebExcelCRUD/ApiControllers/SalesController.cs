@@ -42,13 +42,14 @@ namespace UNAPECIso710.WebExcelCRUD.ApiControllers
             var sales = _dataContext.Sales.AsList<Sale>();
             var clients = _dataContext.Clients.AsList<Client>();
 
-            var response = new Dictionary<string, double>();
+            var total = sales.Sum(p => p.TotalPrice);
+            var response = new List<object>();
             foreach (var item in sales.GroupBy(p => p.UserId))
             {
                 var user = clients.Single(p => p.Id == item.Key);
 
                 var spent = item.Sum(p => p.TotalPrice);
-                response.Add(user.Name, spent);
+                response.Add(new { name = user.Name, value = spent, y =  spent * 100 / total });
             }
 
             return Ok(response);
