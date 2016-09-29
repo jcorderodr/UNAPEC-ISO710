@@ -1,0 +1,43 @@
+﻿@model IEnumerable<UNAPECIso710.WebExcelCRUD.Models.Sale>
+
+@{
+    ViewBag.Title = "Ventas";
+}
+
+<h2>@ViewBag.Title</h2>
+
+
+<table class="table table-striped">
+    <tr>
+        <th>
+            Fecha de Transacción
+        </th>
+        <th>
+            Total de Compra
+        </th>
+        <th>
+            Usuario
+        </th>
+    </tr>
+
+    @{
+        if (Model != null)
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TotalPrice)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UserId)
+                    </td>
+                </tr>
+            }
+        }
+    }
+
+</table>

@@ -1,15 +1,15 @@
 ﻿@model IEnumerable<UNAPECIso710.WebExcelCRUD.Models.Product>
 
 @{
-    ViewBag.Title = "Product";
+    ViewBag.Title = "Productos";
 }
 
 <h2>Product</h2>
 
 <p>
-    Listado de productos disponibles en nuestro inventario
+    Listado de productos disponibles en nuestro inventario:
 </p>
-<table class="table">
+<table class="table table-striped">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Name)

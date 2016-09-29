@@ -10,6 +10,5 @@ namespace UNAPECIso710.WebExcelCRUD.Models
         public double Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
-        public double TotalPrice { get; set; }
     }
 }

@@ -2,12 +2,22 @@
     ViewBag.Title = "Inicio";
 }
 
-<div class="jumbotron">
-    <h1>Jumbotron</h1>
-    <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-    <p><a class="btn btn-primary btn-lg">Learn more</a></p>
+
+<div class="row">
+    <h2>Dashboard General</h2>
 </div>
 
 <div class="row">
-
+    <div class="col-md-12">
+        <div id="salesMonthChart"></div>
+    </div>
+    <div class="col-md-6">
+        <div id="salesCustomerChart"></div>
+    </div>
 </div>
+
+
+@section scripts {
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="~/Scripts/index.js"></script>
+}

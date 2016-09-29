@@ -1,6 +1,7 @@
 ﻿using LinqToExcel;
 using LinqToExcel.Query;
 using System;
+using System.Linq;
 
 namespace UNAPECIso710.WebExcelCRUD.Models
 {
@@ -14,7 +15,6 @@ namespace UNAPECIso710.WebExcelCRUD.Models
         {
             dataContentFile = path + "Content\\Data.xls";
             _factory = new ExcelQueryFactory(dataContentFile);
-
 
         }
 
@@ -57,6 +57,14 @@ namespace UNAPECIso710.WebExcelCRUD.Models
             get
             {
                 return GetWorksheetByName("Clients");
+            }
+        }
+
+        public ExcelQueryable<Row> Sales
+        {
+            get
+            {
+                return GetWorksheetByName("Sales");
             }
         }
 

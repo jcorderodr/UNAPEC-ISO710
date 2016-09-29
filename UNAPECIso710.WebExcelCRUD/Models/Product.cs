@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace UNAPECIso710.WebExcelCRUD.Models
+﻿namespace UNAPECIso710.WebExcelCRUD.Models
 {
     public class Category
     {
@@ -17,7 +12,5 @@ namespace UNAPECIso710.WebExcelCRUD.Models
         public string Name { get; set; }
         public double CategoryId { get; set; }
         public double CustomerId { get; set; }
-
-
     }
 }

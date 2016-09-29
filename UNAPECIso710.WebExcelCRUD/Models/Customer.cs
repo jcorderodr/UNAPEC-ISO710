@@ -10,5 +10,6 @@ namespace UNAPECIso710.WebExcelCRUD.Models
         public double Id { get; set; }
         public string Name { get; set; }
         public string Address { get; set; }
+        public DateTime Date { get; set; }
     }
 }

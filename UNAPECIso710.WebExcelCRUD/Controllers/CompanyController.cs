@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using UNAPECIso710.WebExcelCRUD.Models;
 using UNAPECIso710.WebExcelCRUD.Helpers;
+using UNAPECIso710.WebExcelCRUD.Models;
 
 namespace UNAPECIso710.WebExcelCRUD.Controllers
 {
@@ -20,12 +18,14 @@ namespace UNAPECIso710.WebExcelCRUD.Controllers
             var customers = _dataContext.Customers.Count();
             var categories = _dataContext.Categories.Count();
             var products = _dataContext.Products.Count();
+            var orders = _dataContext.Sales.Count();
 
             var model = new CompanyDetail
             {
                 Categories = categories,
                 Customers = customers,
                 Products = products,
+                Orders = orders
             };
 
             return View(model);
@@ -56,6 +56,32 @@ namespace UNAPECIso710.WebExcelCRUD.Controllers
             return View(entites);
         }
 
+        public ActionResult Sales()
+        {
+            _dataContext = new DataContext(Server.MapPath("/"));
+            var entites = _dataContext.Sales.AsList<Sale>();
+
+            return View(entites);
+        }
+
+        public ActionResult AddSale()
+        {
+            _dataContext = new DataContext(Server.MapPath("/"));
+            var entites = _dataContext.Clients.AsList<Client>();
+
+            ViewData["Users"] = new SelectList(entites, "Id", "Name");
+
+            return View(entites);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AddSale(Sale entity)
+        {
+            _dataContext = new DataContext(Server.MapPath("/"));
+            
+            return View();
+        }
 
     }
 }
